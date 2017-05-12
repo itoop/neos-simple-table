@@ -1,0 +1,38 @@
+'ITOOP.SimpleTable:Table':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: i18n
+    icon: 'icon-table'
+    group: general
+    inlineEditable: false
+    inspector:
+      groups:
+        layout:
+          label: i18n
+        data:
+          label: i18n
+  properties:
+    hasTableHead:
+      type: boolean
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: layout
+
+    hasHighlightColumn:
+      type: boolean
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: layout
+
+    data:
+      type: string
+      ui:
+        reloadIfChanged: true
+        inspector:
+          group: 'data'
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'

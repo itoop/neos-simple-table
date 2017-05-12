@@ -1,0 +1,9 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        'ITOOP.SimpleTable': TRUE
+    userInterface:
+      translation:
+        autoInclude:
+          'ITOOP.SimpleTable': ['NodeTypes/*']

@@ -1,0 +1,13 @@
+prototype(ITOOP.SimpleTable:Table) < prototype(Neos.Neos:Content) {
+
+  attributes.class = Neos.Fusion:RawArray {
+    responsive = 'table-responsive'
+  }
+
+  table = ITOOP.SimpleTable:HtmlTable {
+    @context.data = ITOOP.SimpleTable:CsvParser {
+      csv = ${q(node).property('data')}
+    }
+  }
+  
+}

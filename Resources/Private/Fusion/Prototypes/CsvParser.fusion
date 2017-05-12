@@ -1,0 +1,3 @@
+prototype(ITOOP.SimpleTable:CsvParser) {
+  @class = 'ITOOP\\SimpleTable\\Fusion\\CsvParserImplementation'
+}

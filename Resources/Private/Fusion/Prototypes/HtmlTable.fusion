@@ -1,0 +1,82 @@
+prototype(ITOOP.SimpleTable:HtmlTable) < prototype(Neos.Fusion:Tag) {
+
+  tagName = 'table'
+  attributes.class = Neos.Fusion:RawArray
+  @context.data = ${[[]]}
+
+  content = Neos.Fusion:RawArray {
+    tableHead = ITOOP.SimpleTable:HtmlTableHead {
+      @context.rows = ${[Array.first(data)]}
+
+      @if.hasTableHead = ${q(node).property('hasTableHead') && Type.isArray(data)}
+    }
+    tableBody = ITOOP.SimpleTable:HtmlTableBody {
+      @context.hasHightlightRow = ${q(node).property('hasHighlightColumn')}
+      @context.rows = ${q(node).property('hasTableHead') ? Array.shift(data) : data}
+    }
+  }
+  content.@process.combine = ${Array.join(value, '')}
+}
+
+prototype(ITOOP.SimpleTable:HtmlTableHead) < prototype(Neos.Fusion:Tag) {
+  tagName = 'thead'
+  @context.rows = ${rows}
+  attributes.class = Neos.Fusion:RawArray
+
+  content = Neos.Fusion:Collection {
+    @context.isHeadRow = ${true}
+    collection = ${rows}
+    itemRenderer = ITOOP.SimpleTable:HtmlTableRow
+  }
+}
+
+
+prototype(ITOOP.SimpleTable:HtmlTableBody) < prototype(Neos.Fusion:Tag) {
+  tagName = 'tbody'
+  attributes.class = Neos.Fusion:RawArray
+
+  content = Neos.Fusion:Collection {
+    collection = ${rows}
+    itemRenderer = ITOOP.SimpleTable:HtmlTableRow
+  }
+}
+
+prototype(ITOOP.SimpleTable:HtmlTableRow) < prototype(Neos.Fusion:Tag) {
+  tagName = 'tr'
+  attributes.class = Neos.Fusion:RawArray
+
+  content = Neos.Fusion:Collection {
+    collection = ${item}
+    iterationName = 'iterator'
+    itemRenderer = Neos.Fusion:Case {
+      highlight {
+        condition = ${(hasHightlightRow && iterator.index == 0) || isHeadRow}
+        renderer = ITOOP.SimpleTable:HtmlTableHighlightColumn
+      }
+      default {
+        condition = ${true}
+        renderer = ITOOP.SimpleTable:HtmlTableColumn
+      }
+    }
+  }
+}
+
+prototype(ITOOP.SimpleTable:HtmlTableColumn) < prototype(Neos.Fusion:Tag) {
+  tagName = 'td'
+  content = Neos.Fusion:Case {
+    default {
+      condition = ${true}
+      renderer = ${item}
+      @position = 'end'
+    }
+  }
+
+  attributes.class = Neos.Fusion:RawArray
+}
+
+
+prototype(ITOOP.SimpleTable:HtmlTableHighlightColumn) < prototype(ITOOP.SimpleTable:HtmlTableColumn) {
+  tagName = 'th'
+  content = ${item}
+}
+

@@ -9,5 +9,4 @@ prototype(ITOOP.SimpleTable:Table) < prototype(Neos.Neos:Content) {
       csv = ${q(node).property('data')}
     }
   }
-  
 }

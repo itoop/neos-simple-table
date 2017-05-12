@@ -1,5 +1,5 @@
 # ITOOP Neos-Simple-Table
-Simple Html-Table NodeType for Neos CMS >3.0
+Simple Html-Table NodeType for Neos CMS > 3.0
 
 ## What it provides
 Easily adding a Table-NodeType in Neos CMS. 

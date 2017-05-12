@@ -11,7 +11,7 @@ Choose if a header row and/or a highlight column needs to be rendered.
 # Install
 Install via composer as a dev package
 ```bash
-php composer.phar require "itoop/neos-simple-table" "~0.1"
+php composer.phar require "itoop/neos-simple-table" "dev-master"
 ```
 # Usage
 Just add well formated Csv with semicolon (;) as delimiter into the data-field of the inspector. 

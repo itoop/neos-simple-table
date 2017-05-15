@@ -47,9 +47,9 @@ prototype(ITOOP.SimpleTable:HtmlTableColumn) {
   
     isTrue {
       condition = ${item == '{true}'}
-      renderer = TYPO3.TypoScript:Tag) {
+      renderer = Neos.Fusion:Tag) {
         tagName = 'img'
-        attributes.src = TYPO3.TypoScript:ResourceUri {
+        attributes.src = Neos.Fusion:ResourceUri {
           path = 'resource://ITOOP.SitePackage/Public/icons/checked.svg'
         }
       }
@@ -59,7 +59,7 @@ prototype(ITOOP.SimpleTable:HtmlTableColumn) {
       condition = ${item == '{false}'}
       renderer = TYPO3.TypoScript:Tag) {
         tagName = 'img'
-        attributes.src = TYPO3.TypoScript:ResourceUri {
+        attributes.src = Neos.Fusion:ResourceUri {
           path = 'resource://ITOOP.SitePackage/Public/icons/unchecked.svg'
         }
       }

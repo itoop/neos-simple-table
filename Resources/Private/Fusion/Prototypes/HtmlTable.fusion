@@ -21,8 +21,7 @@ prototype(ITOOP.SimpleTable:HtmlTable) < prototype(Neos.Fusion:Tag) {
 prototype(ITOOP.SimpleTable:HtmlTableHead) < prototype(Neos.Fusion:Tag) {
   tagName = 'thead'
   @context.rows = ${rows}
-  attributes.class = Neos.Fusion:RawArray
-
+  
   content = Neos.Fusion:Collection {
     @context.isHeadRow = ${true}
     collection = ${rows}
@@ -33,7 +32,6 @@ prototype(ITOOP.SimpleTable:HtmlTableHead) < prototype(Neos.Fusion:Tag) {
 
 prototype(ITOOP.SimpleTable:HtmlTableBody) < prototype(Neos.Fusion:Tag) {
   tagName = 'tbody'
-  attributes.class = Neos.Fusion:RawArray
 
   content = Neos.Fusion:Collection {
     collection = ${rows}
@@ -43,8 +41,7 @@ prototype(ITOOP.SimpleTable:HtmlTableBody) < prototype(Neos.Fusion:Tag) {
 
 prototype(ITOOP.SimpleTable:HtmlTableRow) < prototype(Neos.Fusion:Tag) {
   tagName = 'tr'
-  attributes.class = Neos.Fusion:RawArray
-
+  
   content = Neos.Fusion:Collection {
     collection = ${item}
     iterationName = 'iterator'
@@ -69,9 +66,7 @@ prototype(ITOOP.SimpleTable:HtmlTableColumn) < prototype(Neos.Fusion:Tag) {
       renderer = ${item}
       @position = 'end'
     }
-  }
-
-  attributes.class = Neos.Fusion:RawArray
+  }  
 }
 
 

@@ -16,6 +16,7 @@ php composer.phar require "itoop/neos-simple-table" "dev-master"
 # Usage
 Just add well formated Csv with semicolon (;) as delimiter into the data-field of the inspector. 
 Choose if your data contains any header data and if you need the first column highlighted.
+Select columns which shall be aligned right oder center; default is left.
 
 # Extend
 ## Add attributes to result table

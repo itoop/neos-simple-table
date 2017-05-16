@@ -9,4 +9,7 @@ prototype(ITOOP.SimpleTable:Table) < prototype(Neos.Neos:Content) {
       csv = ${q(node).property('data')}
     }
   }
+  
+  caRight = ${q(node).property('columnAlignmentRight')}
+  caCenter = ${q(node).property('columnAlignmentCenter')}
 }

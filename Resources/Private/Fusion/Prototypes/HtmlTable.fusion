@@ -1,7 +1,5 @@
 prototype(ITOOP.SimpleTable:HtmlTable) < prototype(Neos.Fusion:Tag) {
-
   tagName = 'table'
-  attributes.class = Neos.Fusion:RawArray
   @context.data = ${[[]]}
 
   content = Neos.Fusion:RawArray {
@@ -60,6 +58,7 @@ prototype(ITOOP.SimpleTable:HtmlTableRow) < prototype(Neos.Fusion:Tag) {
 
 prototype(ITOOP.SimpleTable:HtmlTableColumn) < prototype(Neos.Fusion:Tag) {
   tagName = 'td'
+  
   content = Neos.Fusion:Case {
     default {
       condition = ${true}

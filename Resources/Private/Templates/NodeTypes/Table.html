@@ -1,23 +1,25 @@
-<f:if condition="{caRight}">
-	<style>
-		<f:for each="{caRight}" as="car">
-			.itoop-simpletable-table tbody tr td:nth-child({car}), .itoop-simpletable-table thead th:nth-child({car}) {
-				text-align: right;
-			}
-		</f:for>
-	</style>
-</f:if>
-
-<f:if condition="{caCenter}">
-	<style>
-		<f:for each="{caCenter}" as="cac">
-			.itoop-simpletable-table tbody tr td:nth-child({cac}), .itoop-simpletable-table thead th:nth-child({cac}) {
-				text-align: center;
-			}
-		</f:for>
-	</style>
-</f:if>
-
 <div {attributes->f:format.raw()}>
-    {table -> f:format.raw()}
+	<f:if condition="{caRight}">
+		<style>
+			<f:for each="{caRight}" as="car">
+				.itoop-simpletable-table tbody td:nth-child({car}),
+				.itoop-simpletable-table thead th:nth-child({car}) {
+					text-align: right;
+				}
+			</f:for>
+		</style>
+	</f:if>
+
+	<f:if condition="{caCenter}">
+		<style>
+			<f:for each="{caCenter}" as="cac">
+				.itoop-simpletable-table tbody td:nth-child({cac}),
+				.itoop-simpletable-table tbody tr:nth-child({cac}),
+				.itoop-simpletable-table tbody th {
+					text-align: center;
+				}
+			</f:for>
+		</style>
+	</f:if>
+    	{table -> f:format.raw()}
 </div>

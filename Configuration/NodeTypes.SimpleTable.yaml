@@ -28,6 +28,69 @@
         reloadIfChanged: true
         inspector:
           group: layout
+          
+    columnAlignmentRight:
+      type: array
+      ui:
+        label: 'Column Aligment Right'
+        inspector:
+          group: layout
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            placeholder: 'Select columns with textalignment right'
+            values:
+              1:
+                label: '1'
+              2:
+                label: '2'
+              3:
+                label: '3'
+              4:
+                label: '4'
+              5:
+                label: '5'
+              6:
+                label: '6'
+              7:
+                label: '7'
+              8:
+                label: '8'
+              9:
+                label: '9'
+              10:
+                label: '10'
+    columnAlignmentCenter:
+      type: array
+      ui:
+        label: 'Column Aligment Center'
+        inspector:
+          group: layout
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            placeholder: 'Select columns with textalignment center'
+            values:
+              1:
+                label: '1'
+              2:
+                label: '2'
+              3:
+                label: '3'
+              4:
+                label: '4'
+              5:
+                label: '5'
+              6:
+                label: '6'
+              7:
+                label: '7'
+              8:
+                label: '8'
+              9:
+                label: '9'
+              10:
+                label: '10'
 
     data:
       type: string

@@ -1,5 +1,6 @@
 # ITOOP Neos-Simple-Table
 Simple Html-Table NodeType for Neos CMS > 3.0
+
 Fork of https://github.com/dlubitz/vivomedia-neos-simple-table with small additions.
 
 ## What it provides

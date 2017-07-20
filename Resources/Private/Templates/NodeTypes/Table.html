@@ -1,6 +1,12 @@
 <div {attributes->f:format.raw()}>
-	<f:if condition="{caRight}">
-		<style>
+	<style>
+		.itoop-simpletable-table tbody td,
+		.itoop-simpletable-table tbody th,
+		.itoop-simpletable-table thead th {
+			text-align: left;			
+		}
+	
+		<f:if condition="{caRight}">
 			<f:for each="{caRight}" as="car">
 				.itoop-simpletable-table tbody td:nth-child({car}),
 				.itoop-simpletable-table tbody th:nth-child({car}),
@@ -8,11 +14,9 @@
 					text-align: right;
 				}
 			</f:for>
-		</style>
-	</f:if>
+		</f:if>
 
-	<f:if condition="{caCenter}">
-		<style>
+		<f:if condition="{caCenter}">
 			<f:for each="{caCenter}" as="cac">
 				.itoop-simpletable-table tbody td:nth-child({cac}),
 				.itoop-simpletable-table tbody th:nth-child({cac}),
@@ -20,7 +24,7 @@
 					text-align: center;
 				}
 			</f:for>
-		</style>
-	</f:if>
+		</f:if>
+	</style>
     	{table -> f:format.raw()}
 </div>

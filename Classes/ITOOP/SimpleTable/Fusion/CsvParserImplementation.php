@@ -17,7 +17,7 @@ class CsvParserImplementation extends AbstractFusionObject
     {
         $data = [];
 
-        $csvData = $this->tsValue('csv');
+        $csvData = $this->fusionValue('csv');
         $lines = preg_split('/\n|\r\n?/', $csvData);
         foreach ($lines as $line) {
             $data[] = str_getcsv($line, ';');

@@ -1,5 +1,5 @@
 # ITOOP Neos-Simple-Table
-Simple Html-Table NodeType for Neos CMS >= 4.0
+Simple Html-Table NodeType for Neos CMS >= 5.0
 
 Fork of https://github.com/dlubitz/vivomedia-neos-simple-table with additions.
 
@@ -13,7 +13,7 @@ Choose if a header row and/or a highlight column needs to be rendered.
 # Install
 Install via composer:
 ```bash
-php composer.phar require "itoop/neos-simple-table" "^0.1"
+php composer.phar require "itoop/neos-simple-table" "^0.2"
 ```
 # Usage
 Just add well formated Csv with semicolon (;) as delimiter into the data-field of the inspector. 
